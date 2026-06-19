@@ -1,0 +1,23 @@
+{
+  "name": "web-login-project-backend",
+  "version": "1.0.0",
+  "description": "Backend for the web login project, handling authentication and user management.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "jsonwebtoken": "^8.5.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.0",
+    "supertest": "^6.1.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}

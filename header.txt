@@ -1,0 +1,74 @@
+import React, { useState, useEffect, useMemo } from 'react';
+import { initializeApp } from 'firebase/app';
+import { 
+  getAuth, 
+  signInWithCustomToken, 
+  signInAnonymously, 
+  onAuthStateChanged, 
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+  updatePassword,
+  signOut,
+  deleteUser,
+  sendPasswordResetEmail,
+  GoogleAuthProvider,
+  signInWithPopup,
+  setPersistence,
+  browserLocalPersistence,
+  browserSessionPersistence
+} from 'firebase/auth';
+import { getFirestore, doc, setDoc, onSnapshot, collection, updateDoc, deleteDoc } from 'firebase/firestore';
+import { 
+  BookOpen, 
+  Calendar, 
+  CheckCircle2, 
+  Plus, 
+  Trash2, 
+  ChevronRight, 
+  Clock, 
+  BarChart3,
+  User,
+  LogOut,
+  Map,
+  ClipboardList,
+  Moon,
+  Sun,
+  ArrowRight,
+  Mail,
+  Lock,
+  Sparkles,
+  Menu,
+  X,
+  Github,
+  Twitter,
+  Linkedin,
+  Code,
+  Zap,
+  MessageSquare,
+  Heart,
+  Camera,
+  Save,
+  Edit,
+  Settings,
+  AlertTriangle,
+  Eye,
+  EyeOff,
+  Search,
+  UserPlus,
+  Send,
+  Bell
+} from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+
+// --- Backend Integration (Replaces Firebase) ---
+let app;
+let auth;
+let db;
+let firebaseAvailable = false;
+const appId = typeof __app_id !== 'undefined' ? __app_id : 'syllabus-tracker-001';
+
+const API_URL = "http://localhost:5000";
+
+const App = () => {
+  const [user, setUser] = useState(null);
