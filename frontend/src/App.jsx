@@ -115,7 +115,7 @@ try {
 }
 
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'syllabus-tracker-001';
-const API_URL = "https://study-flow-1-1ojj.onrender.com";
+const API_URL = "https://study-flow-backend-cojt.onrender.com";
 
 const App = () => {
   const [user, setUser] = useState(null);
